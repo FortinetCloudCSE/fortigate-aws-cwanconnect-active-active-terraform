@@ -8,7 +8,7 @@ weight: 10
 
 ## Welcome
 
-The purpose of this site is to provide a quick start guide for using Infrastructure as Code (IaC) templates located in the repo [**terraformfortigate-aws-cwanconnect-active-active-terraform**](https://github.com/FortinetCloudCSE/terraformfortigate-aws-cwanconnect-active-active-terraform).
+The purpose of this site is to provide a quick start guide for using Infrastructure as Code (IaC) templates located in the repo [**fortigate-aws-cwanconnect-active-active-terraform**](https://github.com/FortinetCloudCSE/fortigate-aws-cwanconnect-active-active-terraform).
 
 Reference the prerequisites and deployment sections on this site to get started.
 

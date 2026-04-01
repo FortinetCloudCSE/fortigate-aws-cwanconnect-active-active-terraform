@@ -1,5 +1,5 @@
 ---
-title: "terraformfortigate-aws-cwanconnect-active-active-terraform"
+title: "fortigate-aws-cwanconnect-active-active-terraform"
 weight: 1
 archetype: home
 ---

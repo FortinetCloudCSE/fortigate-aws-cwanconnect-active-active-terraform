@@ -9,14 +9,14 @@ Once the prerequisites have been satisfied proceed with the deployment steps bel
 
 1.  Clone this repo with the command below.
 ```
-git clone https://github.com/FortinetCloudCSE/terraformfortigate-aws-cwanconnect-active-active-terraform.git
+git clone https://github.com/FortinetCloudCSE/fortigate-aws-cwanconnect-active-active-terraform.git
 ```
 
 2.  Change directories and modify the terraform.tfvars file with your credentials and deployment information. 
 
 {{% notice note %}} In the terraform.tfvars file, the comments explain what inputs are expected for the variables. For further details on a given variable or to see all possible variables, reference the variables.tf file. {{% /notice %}}
 ```
-cd terraformfortigate-aws-cwanconnect-active-active-terraform/terraform
+cd fortigate-aws-cwanconnect-active-active-terraform/terraform
 nano terraform.tfvars
 ```
 
