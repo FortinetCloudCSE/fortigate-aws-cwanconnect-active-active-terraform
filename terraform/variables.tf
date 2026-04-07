@@ -1,119 +1,117 @@
-variable "access_key" {}
-variable "secret_key" {}
 variable "region" {
   description = "Provide the region to deploy the VPC in"
-  type = string
-  default = "us-east-1"
+  type        = string
+  default     = "us-east-1"
 }
 variable "availability_zone1" {
   description = "Provide the first availability zone to create the subnets in"
-  type = string
-  default = "us-east-1a"
+  type        = string
+  default     = "us-east-1a"
 }
 variable "availability_zone2" {
   description = "Provide the second availability zone to create the subnets in"
-  type = string
-  default = "us-east-1b"
+  type        = string
+  default     = "us-east-1b"
 }
 variable "inspection_vpc_cidr" {
   description = "Provide the network CIDR for the VPC"
-  type = string
-  default = "10.0.0.0/16"
+  type        = string
+  default     = "10.0.0.0/16"
 }
 variable "inspection_vpc_public_subnet_cidr1" {
   description = "Provide the network CIDR for the public subnet1 in inspection vpc"
-  type = string
-  default = "10.0.1.0/24"
+  type        = string
+  default     = "10.0.1.0/24"
 }
 variable "inspection_vpc_private_subnet_cidr1" {
   description = "Provide the network CIDR for the private subnet1 in inspection vpc"
-  type = string
-  default = "10.0.3.0/24"
+  type        = string
+  default     = "10.0.3.0/24"
 }
 variable "inspection_vpc_public_subnet_cidr2" {
   description = "Provide the network CIDR for the public subnet2 in inspection vpc"
-  type = string
-  default = "10.0.2.0/24"
+  type        = string
+  default     = "10.0.2.0/24"
 }
 variable "inspection_vpc_private_subnet_cidr2" {
   description = "Provide the network CIDR for the private subnet2 in inspection vpc"
-  type = string
-  default = "10.0.4.0/24"
+  type        = string
+  default     = "10.0.4.0/24"
 }
 variable "cwan_creation" {
   description = "Provide a 'yes' to deply a new CWAN and configure the inspection VPC and fgts accordingly, otherwise leave as 'no'"
-  type = string
-  default = "no"
+  type        = string
+  default     = "no"
 }
 variable "cwan_connect_cidr" {
   description = "[This is needed for either new or existing Cloud WAN] Provide a network CIDR for Cloud WAN Connect (CWAN CNE CIDR for Connect endpoints)"
-  type = string
-  default = "100.64.0.0/24"
+  type        = string
+  default     = "100.64.0.0/24"
 }
 variable "cwan_bgp_asn" {
   description = "[This is needed for either new or existing Cloud WAN] Provide a BGP ASN for Cloud WAN Core Network Edge (CNE)"
-  type = string
-  default = "64512"
+  type        = string
+  default     = "64512"
 }
 variable "cwan_existing_id" {
   description = "[Leave blank if an existing Cwan will not be used] If you are using an existing Cloud WAN, provide the Cloud WAN Core Network ID to create VPC routes to reach it"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "cwan_existing_segment_key" {
   description = "[Leave blank if an existing Cwan will not be used] Provide the name that should be used to create a Tag on the Cwan VPC Attachment to allow CWAN attachment automation"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "cwan_existing_segment_value" {
   description = "[Leave blank if an existing Cwan will not be used] Provide the value that should be used to create a Tag on the Cwan VPC Attachment to allow CWAN attachment automation"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "inspection_vpc_attachment_subnet_cidr1" {
   description = "Provide the network CIDR for the attachment subnet1 in inspection vpc"
-  type = string
-  default = "10.0.7.0/24"
+  type        = string
+  default     = "10.0.7.0/24"
 }
 variable "inspection_vpc_attachment_subnet_cidr2" {
   description = "Provide the network CIDR for the attachment subnet2 in inspection vpc"
-  type = string
-  default = "10.0.8.0/24"
+  type        = string
+  default     = "10.0.8.0/24"
 }
 variable "spoke_vpc1_cidr" {
   description = "Provide the network CIDR for the VPC"
-  type = string
-  default = "10.1.0.0/16"
+  type        = string
+  default     = "10.1.0.0/16"
 }
 variable "spoke_vpc1_private_subnet_cidr1" {
   description = "Provide the network CIDR for the private subnet1 in spoke vpc1"
-  type = string
-  default = "10.1.0.0/24"
+  type        = string
+  default     = "10.1.0.0/24"
 }
 variable "spoke_vpc1_private_subnet_cidr2" {
   description = "Provide the network CIDR for the private subnet2 in spoke vpc1"
-  type = string
-  default = "10.1.1.0/24"
+  type        = string
+  default     = "10.1.1.0/24"
 }
 variable "spoke_vpc2_cidr" {
   description = "Provide the network CIDR for the VPC"
-  type = string
-  default = "10.2.0.0/16"
+  type        = string
+  default     = "10.2.0.0/16"
 }
 variable "spoke_vpc2_private_subnet_cidr1" {
   description = "Provide the network CIDR for the private subnet1 in spoke vpc2"
-  type = string
-  default = "10.2.0.0/24"
+  type        = string
+  default     = "10.2.0.0/24"
 }
 variable "spoke_vpc2_private_subnet_cidr2" {
   description = "Provide the network CIDR for the private subnet2 in spoke vpc2"
-  type = string
-  default = "10.2.1.0/24"
+  type        = string
+  default     = "10.2.1.0/24"
 }
 variable "instance_type" {
   description = "Provide the instance type for the FortiGate instances"
-  type = string
-  default = "c6i.xlarge"
+  type        = string
+  default     = "c6i.xlarge"
   /*
   Here is a list of supported instance types:
   c5.large 
@@ -187,56 +185,56 @@ variable "instance_type" {
 }
 variable "cidr_for_access" {
   description = "Provide a network CIDR for accessing the FortiGate instances"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "keypair" {
   description = "Provide a keypair for accessing the FortiGate instances"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "encrypt_volumes" {
   description = "Provide 'true' to encrypt the FortiGate instances OS and Log volumes with your account's KMS default master key for EBS.  Otherwise provide 'false' to leave unencrypted"
-  type = string
-  default = "true"
+  type        = string
+  default     = "true"
 }
 variable "fortios_version" {
   description = "Provide the verion of FortiOS to use (latest GA AMI will be used), 7.2, 7.4, or 7.6"
-  type = string
-  default = "7.4"
+  type        = string
+  default     = "7.4"
 }
 variable "license_type" {
   description = "Provide the license type for the FortiGate instances, byol flex, or payg"
-  type = string
-  default = "payg"
+  type        = string
+  default     = "payg"
 }
 variable "fgt_bgp_asn" {
   description = "Provide the BGP ASN for the FortiGates"
-  type = string
-  default = "65000"
+  type        = string
+  default     = "65000"
 }
 variable "fgt1_byol_license" {
   description = "[BYOL only] Provide the BYOL license filename for FortiGate1 and place the file in the root module folder"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "fgt2_byol_license" {
   description = "[BYOL only]Provide the BYOL license filename for FortiGate2 and place the file in the root module folder"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "fgt1_fortiflex_token" {
   description = "[FortiFlex only]Provide the FortiFlex Token for FortiGate1 (ie 1A2B3C4D5E6F7G8H9I0J)"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "fgt2_fortiflex_token" {
   description = "[FortiFlex only]Provide the FortiFlex Token for FortiGate2 (ie 2B3C4D5E6F7G8H9I0J1K)"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 variable "tag_name_prefix" {
   description = "Provide a common tag prefix value that will be used in the name tag for all resources"
-  type = string
-  default = "stack-1"
+  type        = string
+  default     = "stack-1"
 }
